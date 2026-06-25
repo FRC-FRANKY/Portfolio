@@ -190,7 +190,7 @@ function App() {
           <div className="hero-content reveal">
             <p className="eyebrow">Available for full-time junior roles</p>
             <h1>Frank Oliver Bentoy</h1>
-            <h2>Front End Developer</h2>
+            <h2>Frontend Developer</h2>
             <p>
               I build responsive web, mobile, and database-driven applications with a focus on practical workflows,
               clean interfaces, and maintainable code.
