@@ -77,7 +77,7 @@ const projects = [
     description: 'A responsive personal website with smooth animations, project filtering, and accessible contact flows.',
     tech: ['React', 'CSS', 'JavaScript'],
     imageClass: 'project-portfolio',
-    link: 'https://github.com/frank-bentoy/portfolio-website',
+    link: 'https://portfolio-lovat-chi-18.vercel.app',
     linkLabel: 'View Portfolio'
   },
   {
