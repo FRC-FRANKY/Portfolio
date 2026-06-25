@@ -198,7 +198,7 @@ function App() {
             <div className="hero-actions">
               <a className="button primary" href="#projects">View Projects</a>
               <a className="button ghost" href="#contact">Contact Me</a>
-              <a className="button subtle" href="/Frank-Oliver-Bentoy (Resume).pdf" download>Download Resume</a>
+              <a className="button subtle" href="/Resume.pdf" download>Download Resume</a>
             </div>
           </div>
           <div className="profile-card reveal">
