@@ -77,7 +77,7 @@ const projects = [
     description: 'A responsive personal website with smooth animations, project filtering, and accessible contact flows.',
     tech: ['React', 'CSS', 'JavaScript'],
     imageClass: 'project-portfolio',
-    link: 'https://portfolio-lovat-chi-18.vercel.app',
+    link: 'https://portfolio-production-6f93.up.railway.app',
     linkLabel: 'View Portfolio'
   },
   {
