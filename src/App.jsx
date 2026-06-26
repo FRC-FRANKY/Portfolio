@@ -56,7 +56,7 @@ const projects = [
   {
     title: 'SafeCommute+',
     category: 'Web',
-    description: 'AI-POWERED PUBLIC TRANSPORTRISK DETECTION WITH REAL-TIME CROWD ANALYTICS',
+    description: 'AI-POWERED PUBLIC TRANSPORT RISK DETECTION WITH REAL-TIME CROWD ANALYTICS',
     tech: ['React', 'NodeJS', 'Firebase'],
     imageClass: 'project-safecommute',
     link: 'https://safe-commute-8rt8ecpu2-frankys-projects-15721699.vercel.app',
