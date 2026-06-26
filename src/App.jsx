@@ -93,7 +93,7 @@ const projects = [
 ];
 
 const timeline = [
-  ['2026', 'Bachelor of Science in Information Technology', 'Currently building strong foundations in software developmentq, database systems, and IT project management.'],
+  ['2026', 'Bachelor of Science in Information Technology', 'Currently building strong foundations in software development, database systems, and IT project management.'],
 ];
 
 const certificates = [
