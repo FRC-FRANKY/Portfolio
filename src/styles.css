@@ -799,6 +799,125 @@ figcaption {
   flex-wrap: wrap;
 }
 
+/* Responsive tweaks */
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 6vw, 3rem);
+    min-height: auto;
+    padding-bottom: 3rem;
+  }
+
+  .particles {
+    display: none;
+  }
+
+  .profile-card {
+    min-height: 18rem;
+    padding: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .certificate-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .stats {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .skill-card,
+  .certificate-card,
+  .project-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .site-header {
+    padding: 0.6rem;
+    margin: 0.5rem auto;
+    width: calc(100% - 1rem);
+    gap: 0.5rem;
+  }
+
+  .brand {
+    font-size: 0.95rem;
+  }
+
+  .brand span {
+    width: 2.2rem;
+    aspect-ratio: 1;
+    border-radius: 0.8rem;
+  }
+
+  .hero {
+    padding: clamp(2rem, 6vw, 3.5rem) 0;
+    gap: 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+  }
+
+  .hero p {
+    font-size: 0.98rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .projects-grid,
+  .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    min-height: 14rem;
+    padding: 1rem;
+  }
+
+  .profile-image {
+    border-radius: 1rem;
+  }
+
+  .section {
+    padding: clamp(2rem, 6vw, 4rem) 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .project-image {
+    min-height: 12rem;
+  }
+
+  .back-top {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+}
+
+/* small polish: allow nav to overflow horizontally on tiny screens */
+@media (max-width: 420px) {
+  nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.6rem;
+  }
+}
+
 .contact-link {
   display: inline-flex;
   padding: 0.65rem 0.95rem;
