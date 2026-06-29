@@ -66,7 +66,7 @@ textarea {
 }
 
 .site-shell {
-  overflow: hidden;
+  overflow-x: hidden;
   opacity: 0;
   animation: site-fade 0.8s ease forwards;
 }
@@ -187,7 +187,20 @@ nav a:focus-visible {
 .hero-content {
   position: relative;
   z-index: 2;
+  min-width: 0;
 }
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.45fr);
+    gap: clamp(3rem, 4vw, 7rem);
+  }
+
+  .hero-content {
+    padding-right: 1rem;
+  }
+}
+
 
 .hero-content::after {
   content: '';
@@ -219,11 +232,13 @@ p {
 }
 
 h1 {
-  max-width: 13ch;
-  font-size: clamp(3rem, 5vw, 5.2rem);
+  max-width: 100%;
+  font-size: clamp(2.8rem, 4.8vw, 5rem);
   line-height: 0.95;
   font-weight: 900;
   margin-bottom: 0.6rem;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .hero h2,
@@ -231,15 +246,38 @@ h1 {
 .split h2,
 .contact h2 {
   font-size: clamp(2rem, 5vw, 3.8rem);
-  line-height: 1.02;
+  line-height: 1.14;
   margin-bottom: 1rem;
 }
 
 .hero h2 {
-  max-width: 15ch;
+  width: 100%;
+  font-size: clamp(2rem, 3.8vw, 3.8rem);
+  line-height: 1.14;
+  margin-bottom: 1rem;
   background: linear-gradient(135deg, var(--text), var(--accent), var(--secondary));
   -webkit-background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+@media (min-width: 1280px) {
+  .hero h1,
+  .hero h2 {
+    white-space: nowrap;
+    word-break: keep-all;
+  }
+}
+
+@media (max-width: 1279px) {
+  .hero h2 {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+    max-width: 100%;
+  }
 }
 
 .hero p,
@@ -1180,5 +1218,4 @@ nav::-webkit-scrollbar{display:none;}
 html{font-size:15px;}
 .section{padding:2.5rem 1rem;}
 h1{font-size:clamp(2.2rem,10vw,3rem);}
-.hero h2{font-size:clamp(1.8rem,8vw,2.4rem);}
 }
