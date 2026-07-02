@@ -262,7 +262,7 @@ function App() {
               focused on developing software that enhances productivity and facilitates clear communication. My current experience involves working with frontend interfaces.
             </p>
             <p>
-              My career aspiration is to become a full-stack software developer, contributing effectively to production teams, 
+              My career aspiration is to become a full-stack software developerand AI Prompt Engineer, contributing effectively to production teams, 
               thoughtfully supporting clients, and continually learning modern engineering practices. 
               I have a strong interest in web development, UI design, and to exploring how technology can address everyday challenges.
             </p>
