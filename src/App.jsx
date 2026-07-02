@@ -58,7 +58,7 @@ const projects = [
     category: 'Web',
     description: 'AI-POWERED PUBLIC TRANSPORT RISK DETECTION WITH REAL-TIME CROWD ANALYTICS',
     tech: ['React', 'NodeJS', 'Firebase'],
-    imageClass: 'project-safecommute',
+    imageFile: 'SafeCommute+.png',
     link: 'https://safe-commute-8rt8ecpu2-frankys-projects-15721699.vercel.app',
     linkLabel: 'View SafeCommute+'
   },
@@ -67,7 +67,7 @@ const projects = [
     category: 'Web',
     description: 'A React productivity app for managing event planning and scheduling for birthday party festival etc. .',
     tech: ['React', 'NodeJS'],
-    imageClass: 'project-eventhub',
+    imageFile: 'EventHub.png',
     link: 'https://gitbam.vercel.app/',
     linkLabel: 'View EventHub'
   },
@@ -76,7 +76,7 @@ const projects = [
     category: 'Web',
     description: 'A responsive personal website with smooth animations, project filtering, and accessible contact flows.',
     tech: ['React', 'CSS', 'JavaScript'],
-    imageClass: 'project-portfolio',
+    imageFile: 'Portfolio.png',
     link: 'https://portfolio-production-6f93.up.railway.app',
     linkLabel: 'View Portfolio'
   },
@@ -85,7 +85,7 @@ const projects = [
     category: 'Web',
     description: 'An administrative interface for managing appointment bookings, client information, and scheduling.',
     tech: ['Node.js', 'Firebase', 'React'],
-    imageClass: 'project-admin-booking',
+    imageFile: 'Admin System.png',
     link: 'https://el-ventures-booking-system-and-inve-sigma.vercel.app/',
     linkLabel: 'View Admin System'
   },
@@ -175,8 +175,30 @@ function App() {
             </a>
           ))}
         </nav>
-        <button className="icon-button" type="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label="Toggle color theme">
-          {theme === 'dark' ? 'LT' : 'DK'}
+        <button
+          className="icon-button"
+          type="button"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          aria-label="Toggle color theme"
+          title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+        >
+          {theme === 'dark' ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <line x1="12" y1="2" x2="12" y2="4"></line>
+              <line x1="12" y1="20" x2="12" y2="22"></line>
+              <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+              <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+              <line x1="2" y1="12" x2="4" y2="12"></line>
+              <line x1="20" y1="12" x2="22" y2="12"></line>
+              <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+              <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+            </svg>
+          )}
         </button>
       </header>
 
@@ -319,11 +341,11 @@ function App() {
           <div className="projects-grid">
             {filteredProjects.map((project) => (
               <article className="project-card" key={project.title}>
-                <div className={`project-image ${project.imageClass}`} aria-hidden="true">
-                  <span />
-                  <span />
-                  <span />
-                </div>
+                <div
+                  className="project-image"
+                  style={{ backgroundImage: `url('/Projects/${project.imageFile}')` }}
+                  aria-hidden="true"
+                />
                 <div className="project-body">
                   <p className="project-type">{project.category}</p>
                   <h3>{project.title}</h3>
@@ -420,7 +442,11 @@ function App() {
           <a href="https://facebook.com/frankybentoy23" target="_blank" rel="noreferrer">Facebook</a>
         </div>
         <p>Copyright 2026 Frank Oliver Bentoy. All rights reserved.</p>
-        <a className="back-top" href="#home" aria-label="Back to top">Top</a>
+        <a className="back-top" href="#home" aria-label="Back to top">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
       </footer>
     </div>
   );

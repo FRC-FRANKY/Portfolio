@@ -34,6 +34,19 @@
   box-sizing: border-box;
 }
 
+/* Accessibility helper: visually hidden but available to screen readers */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -669,61 +682,8 @@ progress::-moz-progress-bar {
   pointer-events: none;
 }
 
-.project-image::after {
-  content: '';
-  position: absolute;
-  inset: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: calc(var(--radius) * 1.2);
-  background: rgba(255, 255, 255, 0.03);
-  z-index: 1;
-}
 
-.project-image span {
-  position: absolute;
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.28);
-  z-index: 2;
-}
 
-.project-image span:nth-child(1) {
-  left: 1.7rem;
-  top: 1.8rem;
-  width: 40%;
-  height: 1rem;
-}
-
-.project-image span:nth-child(2) {
-  left: 1.7rem;
-  top: 4.1rem;
-  width: 62%;
-  height: 4.5rem;
-  opacity: 0.34;
-}
-
-.project-image span:nth-child(3) {
-  right: 1.7rem;
-  bottom: 1.8rem;
-  width: 28%;
-  height: 2.8rem;
-  opacity: 0.5;
-}
-
-.project-safecommute {
-  background: linear-gradient(135deg, #0ea5e9, #14b8a6);
-}
-
-.project-eventhub {
-  background: linear-gradient(135deg, #8b5cf6, #ec4899);
-}
-
-.project-portfolio {
-  background: linear-gradient(135deg, #38bdf8, #7c3aed);
-}
-
-.project-admin-booking {
-  background: linear-gradient(135deg, #22c55e, #0ea5e9);
-}
 
 .project-body {
   padding: 1.2rem;
