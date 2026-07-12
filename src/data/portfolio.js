@@ -215,7 +215,7 @@ export const heroDetails = {
   name: 'Frank Oliver Bentoy',
   role: 'Frontend Developer',
   summary: 'I build responsive web, mobile, and database-driven applications with a focus on practical workflows, clean interfaces, and maintainable code.',
-  resume: '/Frank_Oliver_Bentoy_Resume.pdf',
+  resume: '/Frank_Oliver_Bentoy.pdf',
   image: '/images/FRANK.jpg',
   tags: ['React', 'ASP.NET', 'C#']
 };
