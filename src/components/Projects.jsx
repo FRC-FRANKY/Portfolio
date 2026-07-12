@@ -1,7 +1,7 @@
 import React from 'react';
 import { socialLinks } from '../data/portfolio';
 
-export default function Projects({ projects, categories, filter, setFilter }) {
+export default function Projects({ projects }) {
   const githubUrl = socialLinks.find((link) => link.label === 'GitHub')?.href || 'https://github.com/FRC-FRANKY';
 
   return (
@@ -9,18 +9,6 @@ export default function Projects({ projects, categories, filter, setFilter }) {
       <div className="section-heading">
         <p className="eyebrow">Projects</p>
         <h2>Selected work</h2>
-      </div>
-      <div className="filter-bar" aria-label="Project filters">
-        {categories.map((category) => (
-          <button
-            key={category}
-            type="button"
-            className={filter === category ? 'button primary' : 'button ghost'}
-            onClick={() => setFilter(category)}
-          >
-            {category}
-          </button>
-        ))}
       </div>
       <div className="projects-grid">
         {projects.map((project) => (
@@ -51,8 +39,8 @@ export default function Projects({ projects, categories, filter, setFilter }) {
         ))}
       </div>
       <div className="github-note">
-        <p>Want to see more projects? Just click GitHub .</p>
-        <a className="button primary" href={githubUrl} target="_blank" rel="noreferrer noopener">
+        <p>Want to see more projects? Just click GitHub.</p>
+        <a className="button primary" href={socialLinks.find((link) => link.label === 'GitHub')?.href || 'https://github.com/FRC-FRANKY'} target="_blank" rel="noreferrer noopener">
           Visit GitHub
         </a>
       </div>

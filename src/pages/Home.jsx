@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React from 'react';
 import Header from '../components/Header.jsx';
 import Hero from '../components/Hero.jsx';
 import Stats from '../components/Stats.jsx';
@@ -31,17 +31,9 @@ import {
 } from '../data/portfolio.js';
 
 export default function Home() {
-  const [filter, setFilter] = useState('All');
-  const [lightboxSrc, setLightboxSrc] = useState(null);
+  const [lightboxSrc, setLightboxSrc] = React.useState(null);
 
   useScrollReveal();
-
-  const filteredProjects = useMemo(
-    () => (filter === 'All' ? projects : projects.filter((project) => project.category === filter)),
-    [filter]
-  );
-
-  const categories = ['All', ...new Set(projects.map((project) => project.category))];
 
   return (
     <>
@@ -53,7 +45,7 @@ export default function Home() {
         <Education education={education} />
         <Skills skillGroups={skillGroups} skillIcons={skillIcons} />
         <Certificates certificates={certificates} onOpen={setLightboxSrc} />
-        <Projects projects={filteredProjects} categories={categories} filter={filter} setFilter={setFilter} />
+        <Projects projects={projects} />
         <Experience timeline={timeline} />
         <DesignProcess steps={processSteps} />
         <Testimonials testimonials={testimonials} />
@@ -70,7 +62,7 @@ export default function Home() {
               onClick={() => setLightboxSrc(null)}
               aria-label="Close image preview"
             >
-              ×
+              
             </button>
             <img src={lightboxSrc} alt="Certificate full screen" />
           </div>
