@@ -1,6 +1,9 @@
 import React from 'react';
+import { socialLinks } from '../data/portfolio';
 
 export default function Projects({ projects, categories, filter, setFilter }) {
+  const githubUrl = socialLinks.find((link) => link.label === 'GitHub')?.href || 'https://github.com/FRC-FRANKY';
+
   return (
     <section id="projects" className="section reveal">
       <div className="section-heading">
@@ -46,6 +49,12 @@ export default function Projects({ projects, categories, filter, setFilter }) {
             </div>
           </article>
         ))}
+      </div>
+      <div className="github-note">
+        <p>Want to see more projects? Just click GitHub .</p>
+        <a className="button primary" href={githubUrl} target="_blank" rel="noreferrer noopener">
+          Visit GitHub
+        </a>
       </div>
     </section>
   );
