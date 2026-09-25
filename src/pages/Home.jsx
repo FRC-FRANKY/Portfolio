@@ -13,6 +13,7 @@ import Testimonials from '../components/Testimonials.jsx';
 import Contact from '../components/Contact.jsx';
 import Footer from '../components/Footer.jsx';
 import BackToTop from '../components/BackToTop.jsx';
+import TimeOfDayWrapper from '../components/TimeOfDayWrapper.jsx';
 import useScrollReveal from '../hooks/useScrollReveal.js';
 import {
   navLinks,
@@ -36,7 +37,7 @@ export default function Home() {
   useScrollReveal();
 
   return (
-    <>
+    <TimeOfDayWrapper>
       <Header navLinks={navLinks} />
       <main>
         <Hero details={heroDetails} />
@@ -62,7 +63,7 @@ export default function Home() {
               onClick={() => setLightboxSrc(null)}
               aria-label="Close image preview"
             >
-              
+              ×
             </button>
             <img src={lightboxSrc} alt="Certificate full screen" />
           </div>
@@ -71,6 +72,6 @@ export default function Home() {
 
       <Footer socialLinks={socialLinks} />
       <BackToTop />
-    </>
+    </TimeOfDayWrapper>
   );
 }

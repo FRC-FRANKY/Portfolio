@@ -1,19 +1,165 @@
 :root {
   color-scheme: dark;
+
+  /* Time-of-Day Core Theme Variables (Defaults / Evening profile) */
+  --bg-primary: #050816;
+  --bg-gradient: linear-gradient(135deg, #050816 0%, #090b17 60%, #050816 100%);
+  --bg-radial-1: rgba(34, 211, 238, 0.15);
+  --bg-radial-2: rgba(167, 139, 250, 0.16);
+  --card-bg: rgba(15, 23, 42, 0.84);
+  --card-border: rgba(148, 163, 184, 0.18);
+  --card-shadow: 0 24px 80px rgba(2, 6, 23, 0.28);
+  --card-hover-border: rgba(96, 165, 250, 0.5);
+  --accent-color: #22d3ee;
+  --glow-color: rgba(34, 211, 238, 0.3);
+  --accent-secondary: #a78bfa;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  /* Scenery Silhouette & Sky Variables */
+  --scenery-sky-bg: linear-gradient(180deg, #ffedd5 0%, #fed7aa 35%, #fdba74 75%, #f97316 100%);
+  --scenery-mountain-far: #e4976c;
+  --scenery-mountain-mid: #cb7443;
+  --scenery-foothills-near: #ab5122;
+  --scenery-trees: #7c3111;
+
+  /* Portfolio Mapping Tokens */
   --primary: #60a5fa;
   --secondary: #a78bfa;
-  --background: #050816;
-  --surface: rgba(15, 23, 42, 0.84);
+  --background: var(--bg-primary);
+  --surface: var(--card-bg);
   --surface-soft: rgba(15, 23, 42, 0.56);
   --surface-strong: #111827;
-  --text: #f8fafc;
-  --muted: #cbd5e1;
-  --accent: #22d3ee;
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --accent: var(--accent-color);
   --accent-soft: rgba(34, 211, 238, 0.16);
-  --line: rgba(148, 163, 184, 0.18);
-  --shadow: 0 24px 80px rgba(2, 6, 23, 0.28);
+  --line: var(--card-border);
+  --shadow: var(--card-shadow);
   --radius: 18px;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ==========================================================================
+   TIME OF DAY THEME SYSTEM (Scroll-Triggered)
+   ========================================================================== */
+
+/* 1. MORNING (Sunrise / Dawn) - Hero & About */
+:root[data-time-of-day='morning'],
+[data-time-of-day='morning'] {
+  color-scheme: light;
+  --bg-primary: #fff8f0;
+  --bg-gradient: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
+  --bg-radial-1: rgba(251, 146, 60, 0.26);
+  --bg-radial-2: rgba(245, 158, 11, 0.22);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(245, 158, 11, 0.24);
+  --card-shadow: 0 20px 50px rgba(217, 119, 6, 0.14), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --card-hover-border: rgba(234, 88, 12, 0.55);
+  --accent-color: #ea580c;
+  --glow-color: rgba(245, 158, 11, 0.4);
+  --accent-secondary: #f59e0b;
+  --text-primary: #1c1917;
+  --text-secondary: #44403c;
+  --text-muted: #78716c;
+
+  --scenery-sky-bg: linear-gradient(180deg, #ffedd5 0%, #fed7aa 35%, #fdba74 75%, #f97316 100%);
+  --scenery-mountain-far: #e4976c;
+  --scenery-mountain-mid: #cb7443;
+  --scenery-foothills-near: #ab5122;
+  --scenery-trees: #7c3111;
+
+  --primary: #ea580c;
+  --secondary: #f59e0b;
+  --background: var(--bg-primary);
+  --surface: var(--card-bg);
+  --surface-soft: rgba(255, 247, 237, 0.9);
+  --surface-strong: #ffffff;
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --accent: var(--accent-color);
+  --accent-soft: rgba(245, 158, 11, 0.18);
+  --line: var(--card-border);
+  --shadow: var(--card-shadow);
+}
+
+/* 2. AFTERNOON (Midday / Daylight) - Skills, Projects, Experience, Certificates */
+:root[data-time-of-day='afternoon'],
+[data-time-of-day='afternoon'] {
+  color-scheme: light;
+  --bg-primary: #f0f7ff;
+  --bg-gradient: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 50%, #bae6fd 100%);
+  --bg-radial-1: rgba(14, 165, 233, 0.22);
+  --bg-radial-2: rgba(59, 130, 246, 0.18);
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --card-border: rgba(56, 189, 248, 0.32);
+  --card-shadow: 0 24px 60px rgba(14, 165, 233, 0.14), 0 4px 16px rgba(15, 23, 42, 0.04);
+  --card-hover-border: rgba(2, 132, 199, 0.6);
+  --accent-color: #0284c7;
+  --glow-color: rgba(14, 165, 233, 0.4);
+  --accent-secondary: #2563eb;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --scenery-sky-bg: linear-gradient(180deg, #93c5fd 0%, #bae6fd 40%, #e0f2fe 75%, #f0f9ff 100%);
+  --scenery-mountain-far: #93c5fd;
+  --scenery-mountain-mid: #60a5fa;
+  --scenery-foothills-near: #3b82f6;
+  --scenery-trees: #1e40af;
+
+  --primary: #0284c7;
+  --secondary: #2563eb;
+  --background: var(--bg-primary);
+  --surface: var(--card-bg);
+  --surface-soft: rgba(240, 249, 255, 0.9);
+  --surface-strong: #ffffff;
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --accent: var(--accent-color);
+  --accent-soft: rgba(2, 132, 199, 0.16);
+  --line: var(--card-border);
+  --shadow: var(--card-shadow);
+}
+
+/* 3. EVENING (Dusk / Midnight) - Design Process, Testimonials, Contact */
+:root[data-time-of-day='evening'],
+[data-time-of-day='evening'] {
+  color-scheme: dark;
+  --bg-primary: #050816;
+  --bg-gradient: linear-gradient(135deg, #050816 0%, #0a0e27 50%, #0f172a 100%);
+  --bg-radial-1: rgba(139, 92, 246, 0.24);
+  --bg-radial-2: rgba(34, 211, 238, 0.2);
+  --card-bg: rgba(15, 23, 42, 0.84);
+  --card-border: rgba(139, 92, 246, 0.24);
+  --card-shadow: 0 24px 80px rgba(0, 0, 0, 0.55), 0 0 24px rgba(139, 92, 246, 0.15);
+  --card-hover-border: rgba(167, 139, 250, 0.6);
+  --accent-color: #a78bfa;
+  --glow-color: rgba(139, 92, 246, 0.45);
+  --accent-secondary: #38bdf8;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --scenery-sky-bg: linear-gradient(180deg, #050816 0%, #0a0e27 45%, #0f172a 100%);
+  --scenery-mountain-far: #1e1b4b;
+  --scenery-mountain-mid: #111827;
+  --scenery-foothills-near: #090d16;
+  --scenery-trees: #030712;
+
+  --primary: #60a5fa;
+  --secondary: #a78bfa;
+  --background: var(--bg-primary);
+  --surface: var(--card-bg);
+  --surface-soft: rgba(15, 23, 42, 0.6);
+  --surface-strong: #111827;
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --accent: var(--accent-color);
+  --accent-soft: rgba(34, 211, 238, 0.16);
+  --line: var(--card-border);
+  --shadow: var(--card-shadow);
 }
 
 /* Layout container used across header and app */
@@ -58,20 +204,49 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Smooth Transitions across all theme-sensitive elements */
+html,
+body,
+.time-of-day-wrapper,
+.time-of-day-content,
+.site-header,
+.header,
+.header .nav,
+.nav__menu,
+.nav__link,
+.profile-card,
+.skill-card,
+.project-card,
+.contact-panel,
+.stats article,
+.testimonial-grid figure,
+.timeline article div,
+.certificate-card,
+.process-card,
+.section,
+.button,
+.tag,
+.tech-list span,
+.profile-meta span,
+h1,
+h2,
+h3,
+p,
+span,
+svg {
+  transition: background-color 0.8s ease, background 0.8s ease, color 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease;
+}
+
 body {
   margin: 0;
   min-width: 320px;
-  background: radial-gradient(circle at 18% 12%, rgba(34, 211, 238, 0.15), transparent 26rem),
-    radial-gradient(circle at 88% 16%, rgba(167, 139, 250, 0.16), transparent 28rem),
-    linear-gradient(135deg, var(--background), #090b17 60%, #050816);
-  color: var(--text);
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(circle at 18% 12%, var(--bg-radial-1), transparent 30rem),
+    radial-gradient(circle at 88% 16%, var(--bg-radial-2), transparent 30rem),
+    var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
   overflow-x: hidden;
-}
-
-:root[data-theme='light'] body {
-  background: radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.14), transparent 26rem),
-    radial-gradient(circle at 88% 16%, rgba(167, 139, 250, 0.12), transparent 28rem),
-    linear-gradient(135deg, #f8fafc, #e0f2fe 60%, #f5f3ff);
 }
 
 a {
@@ -140,12 +315,13 @@ textarea {
   justify-content: space-between;
   gap: 1rem;
   border-radius: 14px;
-  background: linear-gradient(90deg, #04102b 0%, #08223f 40%, #0b3550 100%);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.18);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.12);
   padding: 0.85rem 1rem;
-  transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  transition: background 0.8s ease, box-shadow 0.8s ease, border-color 0.8s ease, transform 200ms ease;
 }
 
 .header .nav.container {
@@ -154,9 +330,54 @@ textarea {
 }
 
 .header--scrolled .nav {
-  background: rgba(15, 23, 42, 0.7);
-  box-shadow: 0 28px 80px rgba(2, 6, 23, 0.25);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-color: var(--card-hover-border);
+}
+
+:root[data-time-of-day='morning'] .header .nav,
+[data-time-of-day='morning'] .header .nav {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(245, 158, 11, 0.28);
+  box-shadow: 0 12px 36px rgba(217, 119, 6, 0.12);
+}
+
+:root[data-time-of-day='morning'] .nav__link,
+[data-time-of-day='morning'] .nav__link {
+  color: var(--text-secondary);
+}
+
+:root[data-time-of-day='morning'] .nav__link:hover,
+:root[data-time-of-day='morning'] .nav__link--active,
+[data-time-of-day='morning'] .nav__link:hover,
+[data-time-of-day='morning'] .nav__link--active {
+  color: var(--accent-color);
+}
+
+:root[data-time-of-day='afternoon'] .header .nav,
+[data-time-of-day='afternoon'] .header .nav {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(56, 189, 248, 0.32);
+  box-shadow: 0 12px 36px rgba(14, 165, 233, 0.12);
+}
+
+:root[data-time-of-day='afternoon'] .nav__link,
+[data-time-of-day='afternoon'] .nav__link {
+  color: var(--text-secondary);
+}
+
+:root[data-time-of-day='afternoon'] .nav__link:hover,
+:root[data-time-of-day='afternoon'] .nav__link--active,
+[data-time-of-day='afternoon'] .nav__link:hover,
+[data-time-of-day='afternoon'] .nav__link--active {
+  color: var(--accent-color);
+}
+
+:root[data-time-of-day='evening'] .header .nav,
+[data-time-of-day='evening'] .header .nav {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
 }
 
 :root[data-theme='light'] .header .nav {
@@ -1481,3 +1702,577 @@ html{font-size:15px;}
 .section{padding:2.5rem 1rem;}
 h1{font-size:clamp(2.2rem,10vw,3rem);}
 }
+
+/* ==========================================================================
+   BACKGROUND SCENERY SYSTEM (Fixed Mountains, Trees, Sky, Sun, Moon, Stars)
+   ========================================================================== */
+
+.time-of-day-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.time-of-day-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Fixed scenery canvas behind everything */
+.background-scenery {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* 1. Dynamic Sky Gradients with smooth crossfade */
+.scenery-sky {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sky-gradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.sky-gradient--morning {
+  background: radial-gradient(circle at 18% 35%, rgba(251, 146, 60, 0.35), transparent 45rem),
+              radial-gradient(circle at 80% 20%, rgba(254, 215, 170, 0.45), transparent 50rem),
+              linear-gradient(180deg, #ffedd5 0%, #fed7aa 35%, #fdba74 75%, #f97316 100%);
+}
+
+.sky-gradient--afternoon {
+  background: radial-gradient(circle at 75% 15%, rgba(254, 240, 138, 0.45), transparent 40rem),
+              radial-gradient(circle at 20% 40%, rgba(14, 165, 233, 0.25), transparent 50rem),
+              linear-gradient(180deg, #93c5fd 0%, #bae6fd 38%, #e0f2fe 75%, #f0f9ff 100%);
+}
+
+.sky-gradient--evening {
+  background: radial-gradient(circle at 78% 18%, rgba(167, 139, 250, 0.25), transparent 45rem),
+              radial-gradient(circle at 20% 70%, rgba(34, 211, 238, 0.15), transparent 50rem),
+              linear-gradient(180deg, #050816 0%, #080d24 45%, #0f172a 100%);
+}
+
+.scenery--morning .sky-gradient--morning,
+:root[data-time-of-day='morning'] .sky-gradient--morning {
+  opacity: 1;
+}
+
+.scenery--afternoon .sky-gradient--afternoon,
+:root[data-time-of-day='afternoon'] .sky-gradient--afternoon {
+  opacity: 1;
+}
+
+.scenery--evening .sky-gradient--evening,
+:root[data-time-of-day='evening'] .sky-gradient--evening {
+  opacity: 1;
+}
+
+/* 2. Celestial Layer (Sun, Moon, Stars) */
+.scenery-celestial {
+  position: absolute;
+  inset: 0;
+}
+
+/* Twinkling Stars */
+.celestial-stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+
+.scenery--evening .celestial-stars,
+:root[data-time-of-day='evening'] .celestial-stars {
+  opacity: 1;
+}
+
+.star-point {
+  position: absolute;
+  border-radius: 999px;
+  background: #ffffff;
+  animation: starTwinkle infinite ease-in-out;
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.9), 0 0 16px 4px rgba(167, 139, 250, 0.5);
+  }
+}
+
+/* Sun */
+.celestial-sun-container {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  transition: top 1.2s cubic-bezier(0.34, 1.2, 0.64, 1),
+              left 1.2s cubic-bezier(0.34, 1.2, 0.64, 1),
+              transform 1.2s ease,
+              opacity 0.9s ease;
+  pointer-events: none;
+}
+
+.scenery--morning .celestial-sun-container,
+:root[data-time-of-day='morning'] .celestial-sun-container {
+  top: 32%;
+  left: 12%;
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.scenery--afternoon .celestial-sun-container,
+:root[data-time-of-day='afternoon'] .celestial-sun-container {
+  top: 8%;
+  left: 72%;
+  opacity: 1;
+  transform: translate(0, 0) scale(1.08);
+}
+
+.scenery--evening .celestial-sun-container,
+:root[data-time-of-day='evening'] .celestial-sun-container {
+  top: 75%;
+  left: 8%;
+  opacity: 0;
+  transform: translateY(60px) scale(0.5);
+}
+
+.sun-glow {
+  position: absolute;
+  inset: -30px;
+  border-radius: 999px;
+  transition: background 0.8s ease, box-shadow 0.8s ease;
+}
+
+.scenery--morning .sun-glow,
+:root[data-time-of-day='morning'] .sun-glow {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.5) 0%, rgba(251, 146, 60, 0.25) 50%, transparent 75%);
+  box-shadow: 0 0 90px 40px rgba(245, 158, 11, 0.35);
+}
+
+.scenery--afternoon .sun-glow,
+:root[data-time-of-day='afternoon'] .sun-glow {
+  background: radial-gradient(circle, rgba(254, 240, 138, 0.65) 0%, rgba(56, 189, 248, 0.35) 50%, transparent 75%);
+  box-shadow: 0 0 110px 50px rgba(254, 240, 138, 0.45), 0 0 160px 80px rgba(56, 189, 248, 0.25);
+}
+
+.sun-graphic {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.scenery--morning .sun-core,
+:root[data-time-of-day='morning'] .sun-core {
+  fill: #f59e0b;
+  transition: fill 0.8s ease;
+}
+
+.scenery--morning .sun-corona,
+:root[data-time-of-day='morning'] .sun-corona {
+  fill: rgba(251, 191, 36, 0.35);
+  transition: fill 0.8s ease;
+}
+
+.scenery--afternoon .sun-core,
+:root[data-time-of-day='afternoon'] .sun-core {
+  fill: #fef08a;
+  transition: fill 0.8s ease;
+}
+
+.scenery--afternoon .sun-corona,
+:root[data-time-of-day='afternoon'] .sun-corona {
+  fill: rgba(56, 189, 248, 0.35);
+  transition: fill 0.8s ease;
+}
+
+.sun-pulse-ring {
+  position: absolute;
+  inset: -15px;
+  border-radius: 999px;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  animation: sunSpin 24s linear infinite;
+}
+
+@keyframes sunSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Moon */
+.celestial-moon-container {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  top: 10%;
+  left: 78%;
+  opacity: 0;
+  transform: translateY(50px) scale(0.7);
+  transition: opacity 1.2s cubic-bezier(0.34, 1.2, 0.64, 1),
+              transform 1.2s cubic-bezier(0.34, 1.2, 0.64, 1);
+  pointer-events: none;
+}
+
+.scenery--evening .celestial-moon-container,
+:root[data-time-of-day='evening'] .celestial-moon-container {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.moon-glow {
+  position: absolute;
+  inset: -25px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(226, 232, 240, 0.4) 0%, rgba(167, 139, 250, 0.3) 45%, transparent 75%);
+  box-shadow: 0 0 70px 30px rgba(167, 139, 250, 0.35), 0 0 110px 50px rgba(56, 189, 248, 0.18);
+}
+
+.moon-graphic {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.moon-orb {
+  fill: #f8fafc;
+}
+
+.moon-crescent-mask {
+  fill: #050816;
+}
+
+.moon-crater {
+  fill: rgba(148, 163, 184, 0.4);
+}
+
+/* 3. Floating Clouds Layer */
+.scenery-clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cloud-item {
+  position: absolute;
+  transition: opacity 0.8s ease;
+}
+
+.cloud-item svg path {
+  transition: fill 0.8s ease;
+}
+
+.scenery--morning .cloud-item svg path,
+:root[data-time-of-day='morning'] .cloud-item svg path {
+  fill: rgba(255, 237, 213, 0.65);
+}
+
+.scenery--afternoon .cloud-item svg path,
+:root[data-time-of-day='afternoon'] .cloud-item svg path {
+  fill: rgba(255, 255, 255, 0.82);
+}
+
+.scenery--evening .cloud-item svg path,
+:root[data-time-of-day='evening'] .cloud-item svg path {
+  fill: rgba(30, 41, 59, 0.35);
+}
+
+.cloud-item--1 {
+  top: 14%;
+  left: 6%;
+  width: 240px;
+  animation: cloudDrift1 32s ease-in-out infinite alternate;
+}
+
+.cloud-item--2 {
+  top: 24%;
+  right: 10%;
+  width: 280px;
+  animation: cloudDrift2 42s ease-in-out infinite alternate;
+}
+
+.cloud-item--3 {
+  top: 38%;
+  left: 45%;
+  width: 200px;
+  opacity: 0.6;
+  animation: cloudDrift1 36s ease-in-out infinite alternate;
+}
+
+@keyframes cloudDrift1 {
+  0% { transform: translateX(-20px); }
+  100% { transform: translateX(45px); }
+}
+
+@keyframes cloudDrift2 {
+  0% { transform: translateX(30px); }
+  100% { transform: translateX(-40px); }
+}
+
+/* 4. Ambient Birds Layer */
+.scenery-birds {
+  position: absolute;
+  top: 16%;
+  left: 28%;
+  width: 180px;
+  height: 80px;
+  pointer-events: none;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scenery--evening .scenery-birds,
+:root[data-time-of-day='evening'] .scenery-birds {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.bird {
+  position: absolute;
+  animation: birdFlap 14s ease-in-out infinite alternate;
+}
+
+.bird svg path {
+  transition: fill 0.8s ease;
+}
+
+.scenery--morning .bird svg path,
+:root[data-time-of-day='morning'] .bird svg path {
+  fill: rgba(124, 49, 17, 0.65);
+}
+
+.scenery--afternoon .bird svg path,
+:root[data-time-of-day='afternoon'] .bird svg path {
+  fill: rgba(30, 58, 138, 0.6);
+}
+
+.bird--1 {
+  top: 0;
+  left: 0;
+  width: 34px;
+}
+
+.bird--2 {
+  top: 18px;
+  left: 46px;
+  width: 28px;
+  animation-delay: -3s;
+}
+
+.bird--3 {
+  top: 34px;
+  left: 92px;
+  width: 24px;
+  animation-delay: -6s;
+}
+
+@keyframes birdFlap {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(25px, -12px); }
+  100% { transform: translate(50px, -2px); }
+}
+
+/* 5. Layered Mountain Silhouettes & Tree Forest along Bottom */
+.scenery-landscape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.landscape-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  display: block;
+}
+
+/* Far Mountains */
+.landscape-mountains-far {
+  height: clamp(200px, 32vh, 340px);
+  z-index: 1;
+}
+
+.mountain-far-fill {
+  transition: fill 0.8s ease, opacity 0.8s ease;
+}
+
+.scenery--morning .mountain-far-fill,
+:root[data-time-of-day='morning'] .mountain-far-fill {
+  fill: var(--scenery-mountain-far, #e4976c);
+  opacity: 0.48;
+}
+
+.scenery--afternoon .mountain-far-fill,
+:root[data-time-of-day='afternoon'] .mountain-far-fill {
+  fill: var(--scenery-mountain-far, #93c5fd);
+  opacity: 0.52;
+}
+
+.scenery--evening .mountain-far-fill,
+:root[data-time-of-day='evening'] .mountain-far-fill {
+  fill: var(--scenery-mountain-far, #1e1b4b);
+  opacity: 0.76;
+}
+
+/* Mid Mountains */
+.landscape-mountains-mid {
+  height: clamp(160px, 26vh, 280px);
+  z-index: 2;
+}
+
+.mountain-mid-fill {
+  transition: fill 0.8s ease, opacity 0.8s ease;
+}
+
+.scenery--morning .mountain-mid-fill,
+:root[data-time-of-day='morning'] .mountain-mid-fill {
+  fill: var(--scenery-mountain-mid, #cb7443);
+  opacity: 0.58;
+}
+
+.scenery--afternoon .mountain-mid-fill,
+:root[data-time-of-day='afternoon'] .mountain-mid-fill {
+  fill: var(--scenery-mountain-mid, #60a5fa);
+  opacity: 0.58;
+}
+
+.scenery--evening .mountain-mid-fill,
+:root[data-time-of-day='evening'] .mountain-mid-fill {
+  fill: var(--scenery-mountain-mid, #111827);
+  opacity: 0.86;
+}
+
+/* Near Foothills and Trees */
+.landscape-foothills-near {
+  height: clamp(120px, 20vh, 210px);
+  z-index: 3;
+}
+
+.foothills-near-fill {
+  transition: fill 0.8s ease, opacity 0.8s ease;
+}
+
+.scenery--morning .foothills-near-fill,
+:root[data-time-of-day='morning'] .foothills-near-fill {
+  fill: var(--scenery-foothills-near, #ab5122);
+  opacity: 0.68;
+}
+
+.scenery--afternoon .foothills-near-fill,
+:root[data-time-of-day='afternoon'] .foothills-near-fill {
+  fill: var(--scenery-foothills-near, #3b82f6);
+  opacity: 0.68;
+}
+
+.scenery--evening .foothills-near-fill,
+:root[data-time-of-day='evening'] .foothills-near-fill {
+  fill: var(--scenery-foothills-near, #090d16);
+  opacity: 0.94;
+}
+
+/* Tree Silhouettes */
+.trees-silhouette-group polygon {
+  transition: fill 0.8s ease, opacity 0.8s ease;
+}
+
+.scenery--morning .trees-silhouette-group polygon,
+:root[data-time-of-day='morning'] .trees-silhouette-group polygon {
+  fill: var(--scenery-trees, #7c3111);
+  opacity: 0.82;
+}
+
+.scenery--afternoon .trees-silhouette-group polygon,
+:root[data-time-of-day='afternoon'] .trees-silhouette-group polygon {
+  fill: var(--scenery-trees, #1e40af);
+  opacity: 0.78;
+}
+
+.scenery--evening .trees-silhouette-group polygon,
+:root[data-time-of-day='evening'] .trees-silhouette-group polygon {
+  fill: var(--scenery-trees, #030712);
+  opacity: 0.98;
+}
+
+/* 6. Soft Content Readability Veil: Guarantees 100% WCAG contrast */
+.scenery-readability-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  transition: background 0.8s ease;
+}
+
+.scenery--morning .scenery-readability-veil,
+:root[data-time-of-day='morning'] .scenery-readability-veil {
+  background: linear-gradient(180deg, rgba(255, 248, 240, 0.45) 0%, rgba(255, 248, 240, 0.25) 50%, rgba(255, 248, 240, 0.1) 100%);
+}
+
+.scenery--afternoon .scenery-readability-veil,
+:root[data-time-of-day='afternoon'] .scenery-readability-veil {
+  background: linear-gradient(180deg, rgba(240, 247, 255, 0.4) 0%, rgba(240, 247, 255, 0.2) 50%, rgba(240, 247, 255, 0.08) 100%);
+}
+
+.scenery--evening .scenery-readability-veil,
+:root[data-time-of-day='evening'] .scenery-readability-veil {
+  background: linear-gradient(180deg, rgba(5, 8, 22, 0.35) 0%, rgba(5, 8, 22, 0.2) 50%, rgba(5, 8, 22, 0.08) 100%);
+}
+
+/* Mobile responsive tuning */
+@media (max-width: 768px) {
+  .celestial-sun-container {
+    width: 100px;
+    height: 100px;
+  }
+  .scenery--morning .celestial-sun-container,
+  :root[data-time-of-day='morning'] .celestial-sun-container {
+    top: 25%;
+    left: 8%;
+  }
+  .scenery--afternoon .celestial-sun-container,
+  :root[data-time-of-day='afternoon'] .celestial-sun-container {
+    top: 6%;
+    left: 68%;
+  }
+  .celestial-moon-container {
+    width: 80px;
+    height: 80px;
+    top: 8%;
+    left: 72%;
+  }
+  .landscape-mountains-far {
+    height: 220px;
+  }
+  .landscape-mountains-mid {
+    height: 180px;
+  }
+  .landscape-foothills-near {
+    height: 140px;
+  }
+}
+
+

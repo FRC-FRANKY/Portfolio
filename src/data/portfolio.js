@@ -27,6 +27,13 @@ export const education = [
     title: 'Bachelor of Science in Information Technology',
     institution: 'University of Cebu',
     description: 'Building foundations in software development, database systems, and IT project management while sharpening practical engineering skills.'
+  },
+
+  {
+    year: '2026',
+    title: 'On the Job Training',
+    institution: 'El-Ventures Company',
+    description: 'Assisted the development of booking systems using React, Node.js, and Firebase. Contributed to database design, API integration, and frontend implementation while learning team collaboration and Agile workflows.'
   }
 ];
 
