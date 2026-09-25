@@ -1,11 +1,13 @@
 export const navLinks = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
+  { id: 'education', label: 'Education' },
   { id: 'skills', label: 'Skills' },
+  { id: 'certificates', label: 'Certificates' },
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'education', label: 'Education' },
-  { id: 'certificates', label: 'Certificates' },
+  { id: 'design-process', label: 'Design Process' },
+  { id: 'testimonials', label: 'Testimonials' },
   { id: 'contact', label: 'Contact' }
 ];
 
@@ -13,7 +15,7 @@ export const stats = [
   ['5+', 'Projects Built'],
   ['3', 'Core Tech Areas'],
   ['4+', 'Years Learning'],
-  ['80%', 'Growth Mindset']
+  ['70%', 'Growth Mindset']
 ];
 
 export const aboutCopy = [
@@ -29,12 +31,6 @@ export const education = [
     description: 'Building foundations in software development, database systems, and IT project management while sharpening practical engineering skills.'
   },
 
-  {
-    year: '2026',
-    title: 'On the Job Training',
-    institution: 'El-Ventures Company',
-    description: 'Assisted the development of booking systems using React, Node.js, and Firebase. Contributed to database design, API integration, and frontend implementation while learning team collaboration and Agile workflows.'
-  }
 ];
 
 export const skillIcons = {
@@ -182,6 +178,13 @@ export const timeline = [
     year: '2026',
     title: 'Bachelor of Science in Information Technology',
     description: 'Studying software development, database systems, and IT project workflows while building practical applications.'
+  },
+
+  {
+    year: '2026',
+    title: 'On the Job Training',
+    institution: 'El-Ventures Company',
+    description: 'Assisted the development of Admin systems using React, Node.js, and Firebase. Contributed to database design, API integration, and frontend implementation while learning team collaboration and Agile workflows.'
   }
 ];
 
